@@ -1,0 +1,9 @@
+C:\Users\Angel\source\repos\WpfApp1\EntidadesDeProyecto\bin\Debug\netstandard2.0\EntidadesDeProyecto.deps.json
+C:\Users\Angel\source\repos\WpfApp1\EntidadesDeProyecto\bin\Debug\netstandard2.0\EntidadesDeProyecto.dll
+C:\Users\Angel\source\repos\WpfApp1\EntidadesDeProyecto\bin\Debug\netstandard2.0\EntidadesDeProyecto.pdb
+C:\Users\Angel\source\repos\WpfApp1\EntidadesDeProyecto\obj\Debug\netstandard2.0\EntidadesDeProyecto.csprojAssemblyReference.cache
+C:\Users\Angel\source\repos\WpfApp1\EntidadesDeProyecto\obj\Debug\netstandard2.0\EntidadesDeProyecto.csproj.CoreCompileInputs.cache
+C:\Users\Angel\source\repos\WpfApp1\EntidadesDeProyecto\obj\Debug\netstandard2.0\EntidadesDeProyecto.AssemblyInfoInputs.cache
+C:\Users\Angel\source\repos\WpfApp1\EntidadesDeProyecto\obj\Debug\netstandard2.0\EntidadesDeProyecto.AssemblyInfo.cs
+C:\Users\Angel\source\repos\WpfApp1\EntidadesDeProyecto\obj\Debug\netstandard2.0\EntidadesDeProyecto.dll
+C:\Users\Angel\source\repos\WpfApp1\EntidadesDeProyecto\obj\Debug\netstandard2.0\EntidadesDeProyecto.pdb

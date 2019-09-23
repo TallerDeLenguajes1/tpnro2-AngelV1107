@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="222*"/>
+            <RowDefinition Height="197*"/>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="lbxEntidades" HorizontalAlignment="Left" Height="214" VerticalAlignment="Top" Width="387" Margin="10,88,0,0" Grid.RowSpan="2" SelectionChanged="LbxEntidades_SelectionChanged"/>
+        <Button x:Name="btnABM" Content="ABM" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="387" Grid.Row="1"/>
+        <ComboBox x:Name="cbxEntidades" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="165" SelectionChanged="CbxEntidades_SelectionChanged">
+            <ComboBoxItem Content="Alumnos" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Empleados" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Cursos" HorizontalAlignment="Left" Width="118"/>
+        </ComboBox>
+        <Button x:Name="btnSalir" Content="Salir" Margin="10,110,0,0" VerticalAlignment="Top" Grid.Row="1" Height="77" Click="BtnSalir_Click" HorizontalAlignment="Left" Width="772"/>
+        <StackPanel x:Name="stkInfo" HorizontalAlignment="Left" Height="214" Margin="402,88,0,0" VerticalAlignment="Top" Width="380" Grid.RowSpan="2">
+            <WrapPanel Height="49">
+                <Label Content="Tipo info:"/>
+                <Label Content="info"/>
+            </WrapPanel>
+        </StackPanel>
+        <Label Content="Informacion" HorizontalAlignment="Left" Margin="402,62,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpcion1" Content="Opcion1" HorizontalAlignment="Left" Margin="402,85,0,0" Grid.Row="1" VerticalAlignment="Top" Width="203"/>
+        <Button x:Name="btnOpcion2" Content="Opcion2" HorizontalAlignment="Left" Margin="610,85,0,0" Grid.Row="1" VerticalAlignment="Top" Width="172"/>
+
+    </Grid>
+</Window>
