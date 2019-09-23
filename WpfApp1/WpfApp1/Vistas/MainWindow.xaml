@@ -12,7 +12,7 @@
             <RowDefinition Height="197*"/>
         </Grid.RowDefinitions>
         <ListBox x:Name="lbxEntidades" HorizontalAlignment="Left" Height="214" VerticalAlignment="Top" Width="387" Margin="10,88,0,0" Grid.RowSpan="2" SelectionChanged="LbxEntidades_SelectionChanged"/>
-        <Button x:Name="btnABM" Content="ABM" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="387" Grid.Row="1"/>
+        <Button x:Name="btnABM" Content="ABM" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="387" Grid.Row="1" Click="BtnABM_Click"/>
         <ComboBox x:Name="cbxEntidades" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="165" SelectionChanged="CbxEntidades_SelectionChanged">
             <ComboBoxItem Content="Alumnos" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="Empleados" HorizontalAlignment="Left" Width="118"/>

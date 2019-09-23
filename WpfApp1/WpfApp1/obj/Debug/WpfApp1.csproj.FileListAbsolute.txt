@@ -34,3 +34,9 @@ C:\Users\Angel\source\repos\tpnro2-AngelV1107\WpfApp1\WpfApp1\obj\Debug\WpfApp1.
 C:\Users\Angel\source\repos\tpnro2-AngelV1107\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
 C:\Users\Angel\source\repos\tpnro2-AngelV1107\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\Angel\source\repos\tpnro2-AngelV1107\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\Angel\source\repos\tpnro2-AngelV1107\WpfApp1\WpfApp1\obj\Debug\Vistas\VistaAbmAlumno.g.cs
+C:\Users\Angel\source\repos\tpnro2-AngelV1107\WpfApp1\WpfApp1\obj\Debug\Vistas\VistaAbmCurso.g.cs
+C:\Users\Angel\source\repos\tpnro2-AngelV1107\WpfApp1\WpfApp1\obj\Debug\Vistas\VistaAbmEmpleado.g.cs
+C:\Users\Angel\source\repos\tpnro2-AngelV1107\WpfApp1\WpfApp1\obj\Debug\Vistas\VistaAbmAlumno.baml
+C:\Users\Angel\source\repos\tpnro2-AngelV1107\WpfApp1\WpfApp1\obj\Debug\Vistas\VistaAbmCurso.baml
+C:\Users\Angel\source\repos\tpnro2-AngelV1107\WpfApp1\WpfApp1\obj\Debug\Vistas\VistaAbmEmpleado.baml

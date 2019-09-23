@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Vistas;
 
 namespace WpfApp1
 {
@@ -268,6 +269,94 @@ namespace WpfApp1
             {
                 return ModoABM.SinSelecc;
             }
+        }
+
+        private void BtnABM_Click(object sender, RoutedEventArgs e)
+        {
+            if (DeterminarModoABM() == ModoABM.Alta)
+            {
+                switch (EntidadSeleccionada())
+                {
+                    case Entidad.Alumno:
+                        VistaAbmAlumno AbmAlum = new VistaAbmAlumno();
+                        AbmAlum.ShowDialog();
+                        /*
+                        if (AbmAlum.SinGuardado == false)
+                        {
+                            alumnos.Add(AbmAlum.GetAlumno());
+                        }
+                        */
+                        UpdateList();
+                        break;
+                    case Entidad.Empleado:
+                        VistaAbmEmpleado AbmEmp = new VistaAbmEmpleado();
+                        AbmEmp.ShowDialog();
+                        /*
+                        if (AbmEmp.SinGuardado == false)
+                        {
+                           empleados.Add(AbmEmp.GetEmp());
+                        }
+                        */
+                        UpdateList();
+                        break;
+                    case Entidad.Curso:
+                        /*
+                        VistaAbmCurso AbmCur = new VistaAbmCurso(alumnos, empleados);
+                        AbmCur.ShowDialog();
+                         
+                        //if (AbmCur.SinGuardado == false)
+                        //{
+                        //    cursos.Add(AbmCur.GetCurso());
+                        //}
+
+                        UpdateList();
+                        */
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+            else if (DeterminarModoABM() == ModoABM.Modif)
+            {
+                switch (EntidadSeleccionada())
+                {
+
+
+                    case Entidad.Alumno:
+                        /*
+                        VistaAbmAlumno AbmAlum = new VistaAbmAlumno(alumnos[lbxEntidades.SelectedIndex]);
+                        AbmAlum.ShowDialog();
+                        //alumnos[lbxEntidades.SelectedIndex] = AbmAlum.GetAlumno();
+                        UpdateList();
+                        */
+                        break;
+                    case Entidad.Empleado:
+                        /*
+                        VistaAbmEmpleado AbmEmp = new VistaAbmEmpleado(empleados[lbxEntidades.SelectedIndex]);
+                        AbmEmp.ShowDialog();
+                        //empleados[lbxEntidades.SelectedIndex] = AbmEmp.GetEmp());
+                        UpdateList();
+                        */
+                        break;
+                    case Entidad.Curso:
+                        /*
+                        VistaAbmCurso AbmCur = new VistaAbmCurso(alumnos, empleados, cursos[lbxEntidades.SelectedIndex]);
+                        AbmCur.ShowDialog();
+                        //cursos[lbxEntidades.SelectedIndex] = AbmCur.GetCurso();
+                        UpdateList();
+                        */
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (DeterminarModoABM() == ModoABM.SinSelecc)
+            {
+                //Nada
+            }
+
+            UpdateInfo();
         }
     }
 }
