@@ -252,33 +252,7 @@ namespace WpfApp1
         }
         private void LbxEntidades_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DeterminarModoABM() != ModoABM.SinSelecc)
-            {                
-                if (DeterminarModoABM() == ModoABM.Alta)
-                {
-                    UpdateInfo();
-                }
-                else
-                {
-                    UpdateInfo();
-                    /*
-                    switch (EntidadSeleccionada())
-                    {
-                        case Entidad.Alumno:
-                            UpdateInfo(alumnos[lbxEntidades.SelectedIndex]);
-                            break;
-                        case Entidad.Empleado:
-                            UpdateInfo(empleados[lbxEntidades.SelectedIndex]);
-                            break;
-                        case Entidad.Curso:
-                            UpdateInfo(cursos[lbxEntidades.SelectedIndex]);
-                            break;
-                        default:
-                            break;
-                    }
-                    */
-                }
-            }
+            UpdateInfo();
             UpdateBtns();
         }
         private ModoABM DeterminarModoABM()
@@ -338,12 +312,11 @@ namespace WpfApp1
                 case Entidad.Empleado:
                     VistaAbmEmpleado AbmEmp = new VistaAbmEmpleado();
                     AbmEmp.ShowDialog();
-                    /*
-                    if (AbmEmp.SinGuardado == false)
+                    
+                    if (AbmEmp.ConGuardado == true)
                     {
-                       empleados.Add(AbmEmp.GetEmp());
+                       empleados.Add(AbmEmp.Empleado);
                     }
-                    */
                     UpdateList();
                     break;
                 case Entidad.Curso:
@@ -373,14 +346,14 @@ namespace WpfApp1
                     alumnos[lbxEntidades.SelectedIndex] = AbmAlum.Alumno;
                     UpdateList();
                     break;
+
                 case Entidad.Empleado:
-                    /*
                     VistaAbmEmpleado AbmEmp = new VistaAbmEmpleado(empleados[lbxEntidades.SelectedIndex]);
                     AbmEmp.ShowDialog();
-                    //empleados[lbxEntidades.SelectedIndex] = AbmEmp.GetEmp());
+                    empleados[lbxEntidades.SelectedIndex] = AbmEmp.Empleado;
                     UpdateList();
-                    */
                     break;
+
                 case Entidad.Curso:
                     /*
                     VistaAbmCurso AbmCur = new VistaAbmCurso(alumnos, empleados, cursos[lbxEntidades.SelectedIndex]);

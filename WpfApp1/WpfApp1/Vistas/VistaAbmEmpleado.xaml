@@ -5,25 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.Vistas"
         mc:Ignorable="d"
-        Title="VistaAbmEmpleado" Height="450" Width="800">
+        Title="VistaAbmEmpleado" Height="450" Width="800" Closing="Window_Closing">
     <Grid>
         <Label Content="Nombre:" HorizontalAlignment="Left" Margin="239,97,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="239,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txbNombre" HorizontalAlignment="Left" Height="23" Margin="239,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="DNI:" HorizontalAlignment="Left" Margin="239,158,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="239,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txbDni" HorizontalAlignment="Left" Height="23" Margin="239,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Apellido:" HorizontalAlignment="Left" Margin="379,97,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="379,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <DatePicker HorizontalAlignment="Left" Margin="379,188,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txbApellido" HorizontalAlignment="Left" Height="23" Margin="379,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <DatePicker x:Name="dpFechaNac" HorizontalAlignment="Left" Margin="379,188,0,0" VerticalAlignment="Top"/>
         <Label Content="Fecha de Nacimiento:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="379,158,0,0"/>
-        <DatePicker HorizontalAlignment="Left" Margin="379,255,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dpFechaAlta" HorizontalAlignment="Left" Margin="379,255,0,0" VerticalAlignment="Top"/>
         <Label Content="Fecha de Alta:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="379,225,0,0"/>
         <Label Content="Sueldo:" HorizontalAlignment="Left" Margin="239,225,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="239,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="282,304,0,0" VerticalAlignment="Top" Width="242"/>
+        <TextBox x:Name="txbSueldo" HorizontalAlignment="Left" Height="23" Margin="239,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbxCargo" HorizontalAlignment="Left" Margin="282,304,0,0" VerticalAlignment="Top" Width="242"/>
         <Label Content="Cargo:" HorizontalAlignment="Left" Margin="239,300,0,0" VerticalAlignment="Top"/>
-        <Button Content="Guardar" HorizontalAlignment="Left" Margin="308,355,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Borrar" HorizontalAlignment="Left" Margin="388,355,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.849,0.3"/>
-        <Button Content="Salir" HorizontalAlignment="Left" Margin="308,380,0,0" VerticalAlignment="Top" Width="155"/>
+        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="308,355,0,0" VerticalAlignment="Top" Width="75" Click="BtnGuardar_Click"/>
+        <Button x:Name="btnBorrar" Content="Borrar" HorizontalAlignment="Left" Margin="388,355,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.849,0.3"/>
+        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="308,380,0,0" VerticalAlignment="Top" Width="155" Click="BtnSalir_Click"/>
 
     </Grid>
 </Window>

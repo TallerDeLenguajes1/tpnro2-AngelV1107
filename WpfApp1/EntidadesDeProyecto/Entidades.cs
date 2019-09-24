@@ -71,7 +71,7 @@ namespace EntidadesDeProyecto
 
         public override string ToString()
         {
-            return dni + ", " + apellido + ", " + apellido + ", " + FechaDeNac.ToShortDateString();
+            return dni + ", " + nombre + ", " + apellido + ", " + FechaDeNac.ToShortDateString();
         }
 
     }
