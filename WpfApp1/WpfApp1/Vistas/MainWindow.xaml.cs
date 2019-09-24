@@ -104,7 +104,7 @@ namespace WpfApp1
             stkInfo.Children.Add(WPInfo("Nombre:", alum.Nombre));
             stkInfo.Children.Add(WPInfo("Apellido:", alum.Apellido));
             stkInfo.Children.Add(WPInfo("DNI:", alum.Dni.ToString()));
-            stkInfo.Children.Add(WPInfo("Fecha de nacimiento:", alum.FechaDeNacimiento.ToShortDateString()));
+            stkInfo.Children.Add(WPInfo("Fecha de nacimiento:", alum.FechaDeNac.ToShortDateString()));
             stkInfo.Children.Add(WPInfo("Edad:", alum.Edad().ToString()));
             stkInfo.Children.Add(WPInfo("Cuotas pagadas:", ""));
         }
@@ -114,7 +114,7 @@ namespace WpfApp1
             stkInfo.Children.Add(WPInfo("Nombre:", emp.Nombre));
             stkInfo.Children.Add(WPInfo("Apellido:", emp.Apellido));
             stkInfo.Children.Add(WPInfo("DNI:", emp.Dni.ToString()));
-            stkInfo.Children.Add(WPInfo("Fecha de nacimiento:", emp.FechaDeNacimiento.ToShortDateString()));
+            stkInfo.Children.Add(WPInfo("Fecha de nacimiento:", emp.FechaDeNac.ToShortDateString()));
             stkInfo.Children.Add(WPInfo("Edad:", emp.Edad().ToString()));
             stkInfo.Children.Add(WPInfo("Fecha de alta:", emp.FechaDeAlta.ToShortDateString()));
             stkInfo.Children.Add(WPInfo("Antiguedad:", emp.Antiguedad().ToString()));
@@ -280,12 +280,11 @@ namespace WpfApp1
                     case Entidad.Alumno:
                         VistaAbmAlumno AbmAlum = new VistaAbmAlumno();
                         AbmAlum.ShowDialog();
-                        /*
-                        if (AbmAlum.SinGuardado == false)
+                        
+                        if (AbmAlum.ConGuardado == true)
                         {
-                            alumnos.Add(AbmAlum.GetAlumno());
+                            alumnos.Add(AbmAlum.Alumno);
                         }
-                        */
                         UpdateList();
                         break;
                     case Entidad.Empleado:

@@ -7,7 +7,7 @@ namespace EntidadesDeProyecto
     {
         string nombre;
         string apellido;
-        DateTime fechaDeNacimiento;
+        DateTime fechaDeNac;
         long dni;
 
         public string Nombre
@@ -36,16 +36,16 @@ namespace EntidadesDeProyecto
             }
         }
 
-        public DateTime FechaDeNacimiento
+        public DateTime FechaDeNac
         {
             get
             {
-                return fechaDeNacimiento;
+                return fechaDeNac;
             }
 
             set
             {
-                fechaDeNacimiento = value;
+                fechaDeNac = value;
             }
         }
 
@@ -71,7 +71,7 @@ namespace EntidadesDeProyecto
 
         public override string ToString()
         {
-            return dni + ", " + apellido + ", " + apellido + ", " + FechaDeNacimiento.ToShortDateString();
+            return dni + ", " + apellido + ", " + apellido + ", " + FechaDeNac.ToShortDateString();
         }
 
     }
