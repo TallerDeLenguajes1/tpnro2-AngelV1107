@@ -273,7 +273,6 @@ namespace WpfApp1
                 return ModoABM.SinSelecc;
             }
         }
-
         private void BtnABM_Click(object sender, RoutedEventArgs e)
         {
             if (DeterminarModoABM() != ModoABM.SinSelecc)
@@ -320,18 +319,16 @@ namespace WpfApp1
                     UpdateList();
                     break;
                 case Entidad.Curso:
-                    /*
                     VistaAbmCurso AbmCur = new VistaAbmCurso(alumnos, empleados);
                     AbmCur.ShowDialog();
 
-                    //if (AbmCur.SinGuardado == false)
-                    //{
-                    //    cursos.Add(AbmCur.GetCurso());
-                    //}
-
+                    if (AbmCur.ConGuardado == true)
+                    {
+                        cursos.Add(AbmCur.Curso);
+                    }
                     UpdateList();
-                    */
                     break;
+
                 default:
                     break;
             }
@@ -355,12 +352,10 @@ namespace WpfApp1
                     break;
 
                 case Entidad.Curso:
-                    /*
                     VistaAbmCurso AbmCur = new VistaAbmCurso(alumnos, empleados, cursos[lbxEntidades.SelectedIndex]);
                     AbmCur.ShowDialog();
-                    //cursos[lbxEntidades.SelectedIndex] = AbmCur.GetCurso();
+                    cursos[lbxEntidades.SelectedIndex] = AbmCur.Curso;
                     UpdateList();
-                    */
                     break;
                 default:
                     break;

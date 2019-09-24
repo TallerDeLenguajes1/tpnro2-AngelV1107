@@ -167,8 +167,8 @@ namespace EntidadesDeProyecto
         List<Alumno> alumnos;
         Empleado docente;
         string tema;
-        float cuota;
-        float inscripcion;
+        decimal cuota;
+        decimal inscripcion;
 
         public abstract string GetTipo();
 
@@ -225,7 +225,7 @@ namespace EntidadesDeProyecto
             }
         }
 
-        public float Cuota
+        public decimal Cuota
         {
             get
             {
@@ -238,7 +238,7 @@ namespace EntidadesDeProyecto
             }
         }
 
-        public float Inscripcion
+        public decimal Inscripcion
         {
             get
             {
