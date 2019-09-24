@@ -65,38 +65,64 @@ namespace WpfApp1
         private void UpdateInfo()
         {
             stkInfo.Children.Clear();
-            switch (EntidadSeleccionada())
-            {
-                case Entidad.Alumno:
-                    stkInfo.Children.Add(WPInfo("Nombre:", ""));
-                    stkInfo.Children.Add(WPInfo("Apellido:", ""));
-                    stkInfo.Children.Add(WPInfo("DNI:", ""));
-                    stkInfo.Children.Add(WPInfo("Fecha de nacimiento:", ""));
-                    stkInfo.Children.Add(WPInfo("Edad:", ""));
-                    stkInfo.Children.Add(WPInfo("Cuotas pagadas:", ""));
-                    break;
-                case Entidad.Empleado:
-                    stkInfo.Children.Add(WPInfo("Nombre:", ""));
-                    stkInfo.Children.Add(WPInfo("Apellido:", ""));
-                    stkInfo.Children.Add(WPInfo("DNI:", ""));
-                    stkInfo.Children.Add(WPInfo("Fecha de nacimiento:", ""));
-                    stkInfo.Children.Add(WPInfo("Edad:", ""));
-                    stkInfo.Children.Add(WPInfo("Fecha de alta:", ""));
-                    stkInfo.Children.Add(WPInfo("Antiguedad:", ""));
-                    stkInfo.Children.Add(WPInfo("Cargo:", ""));
-                    stkInfo.Children.Add(WPInfo("Sueldo:", ""));
-                    break;
-                case Entidad.Curso:
-                    stkInfo.Children.Add(WPInfo("Tema:", ""));
-                    stkInfo.Children.Add(WPInfo("Docente:", ""));
-                    stkInfo.Children.Add(WPInfo("Turno:", ""));
-                    stkInfo.Children.Add(WPInfo("Inscripcion:", ""));
-                    stkInfo.Children.Add(WPInfo("Cuota:", ""));
-                    break;
-                default:
-                    break;
-            }
+
             
+
+            if (DeterminarModoABM() == ModoABM.Alta || DeterminarModoABM() == ModoABM.SinSelecc)
+            {
+                //Sin seleccion o alta
+                switch (EntidadSeleccionada())
+                {
+                    case Entidad.Alumno:
+                        stkInfo.Children.Add(WPInfo("Nombre:", ""));
+                        stkInfo.Children.Add(WPInfo("Apellido:", ""));
+                        stkInfo.Children.Add(WPInfo("DNI:", ""));
+                        stkInfo.Children.Add(WPInfo("Fecha de nacimiento:", ""));
+                        stkInfo.Children.Add(WPInfo("Edad:", ""));
+                        stkInfo.Children.Add(WPInfo("Cuotas pagadas:", ""));
+                        break;
+                    case Entidad.Empleado:
+                        stkInfo.Children.Add(WPInfo("Nombre:", ""));
+                        stkInfo.Children.Add(WPInfo("Apellido:", ""));
+                        stkInfo.Children.Add(WPInfo("DNI:", ""));
+                        stkInfo.Children.Add(WPInfo("Fecha de nacimiento:", ""));
+                        stkInfo.Children.Add(WPInfo("Edad:", ""));
+                        stkInfo.Children.Add(WPInfo("Fecha de alta:", ""));
+                        stkInfo.Children.Add(WPInfo("Antiguedad:", ""));
+                        stkInfo.Children.Add(WPInfo("Cargo:", ""));
+                        stkInfo.Children.Add(WPInfo("Sueldo:", ""));
+                        break;
+                    case Entidad.Curso:
+                        stkInfo.Children.Add(WPInfo("Tema:", ""));
+                        stkInfo.Children.Add(WPInfo("Docente:", ""));
+                        stkInfo.Children.Add(WPInfo("Turno:", ""));
+                        stkInfo.Children.Add(WPInfo("Inscripcion:", ""));
+                        stkInfo.Children.Add(WPInfo("Cuota:", ""));
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                //Datos de una entidad existente
+
+                int indiceLbx = lbxEntidades.SelectedIndex;
+                switch (EntidadSeleccionada())
+                {
+                    case Entidad.Alumno:
+                        UpdateInfo(alumnos[indiceLbx]);
+                        break;
+                    case Entidad.Empleado:
+                        UpdateInfo(empleados[indiceLbx]);
+                        break;
+                    case Entidad.Curso:
+                        UpdateInfo(cursos[indiceLbx]);
+                        break;
+                    default:
+                        break;
+                }
+            }            
         }
         private void UpdateInfo(Alumno alum)
         {
@@ -234,6 +260,8 @@ namespace WpfApp1
                 }
                 else
                 {
+                    UpdateInfo();
+                    /*
                     switch (EntidadSeleccionada())
                     {
                         case Entidad.Alumno:
@@ -248,6 +276,7 @@ namespace WpfApp1
                         default:
                             break;
                     }
+                    */
                 }
             }
             UpdateBtns();
@@ -273,89 +302,96 @@ namespace WpfApp1
 
         private void BtnABM_Click(object sender, RoutedEventArgs e)
         {
-            if (DeterminarModoABM() == ModoABM.Alta)
+            if (DeterminarModoABM() != ModoABM.SinSelecc)
             {
-                switch (EntidadSeleccionada())
+                int indiceLbx = lbxEntidades.SelectedIndex;
+                if (DeterminarModoABM() == ModoABM.Alta)
                 {
-                    case Entidad.Alumno:
-                        VistaAbmAlumno AbmAlum = new VistaAbmAlumno();
-                        AbmAlum.ShowDialog();
-                        
-                        if (AbmAlum.ConGuardado == true)
-                        {
-                            alumnos.Add(AbmAlum.Alumno);
-                        }
-                        UpdateList();
-                        break;
-                    case Entidad.Empleado:
-                        VistaAbmEmpleado AbmEmp = new VistaAbmEmpleado();
-                        AbmEmp.ShowDialog();
-                        /*
-                        if (AbmEmp.SinGuardado == false)
-                        {
-                           empleados.Add(AbmEmp.GetEmp());
-                        }
-                        */
-                        UpdateList();
-                        break;
-                    case Entidad.Curso:
-                        /*
-                        VistaAbmCurso AbmCur = new VistaAbmCurso(alumnos, empleados);
-                        AbmCur.ShowDialog();
-                         
-                        //if (AbmCur.SinGuardado == false)
-                        //{
-                        //    cursos.Add(AbmCur.GetCurso());
-                        //}
-
-                        UpdateList();
-                        */
-                        break;
-                    default:
-                        break;
+                    Alta();
                 }
-
-            }
-            else if (DeterminarModoABM() == ModoABM.Modif)
-            {
-                switch (EntidadSeleccionada())
+                else if (DeterminarModoABM() == ModoABM.Modif)
                 {
-
-
-                    case Entidad.Alumno:
-                        /*
-                        VistaAbmAlumno AbmAlum = new VistaAbmAlumno(alumnos[lbxEntidades.SelectedIndex]);
-                        AbmAlum.ShowDialog();
-                        //alumnos[lbxEntidades.SelectedIndex] = AbmAlum.GetAlumno();
-                        UpdateList();
-                        */
-                        break;
-                    case Entidad.Empleado:
-                        /*
-                        VistaAbmEmpleado AbmEmp = new VistaAbmEmpleado(empleados[lbxEntidades.SelectedIndex]);
-                        AbmEmp.ShowDialog();
-                        //empleados[lbxEntidades.SelectedIndex] = AbmEmp.GetEmp());
-                        UpdateList();
-                        */
-                        break;
-                    case Entidad.Curso:
-                        /*
-                        VistaAbmCurso AbmCur = new VistaAbmCurso(alumnos, empleados, cursos[lbxEntidades.SelectedIndex]);
-                        AbmCur.ShowDialog();
-                        //cursos[lbxEntidades.SelectedIndex] = AbmCur.GetCurso();
-                        UpdateList();
-                        */
-                        break;
-                    default:
-                        break;
+                    Modificacion();
                 }
+                lbxEntidades.SelectedIndex = indiceLbx;
+                UpdateInfo();
             }
-            else if (DeterminarModoABM() == ModoABM.SinSelecc)
+            else
             {
                 //Nada
             }
+        }
+        private void Alta()
+        {
+            switch (EntidadSeleccionada())
+            {
+                case Entidad.Alumno:
+                    VistaAbmAlumno AbmAlum = new VistaAbmAlumno();
+                    AbmAlum.ShowDialog();
 
-            UpdateInfo();
+                    if (AbmAlum.ConGuardado == true)
+                    {
+                        alumnos.Add(AbmAlum.Alumno);
+                    }
+                    UpdateList();
+                    break;
+                case Entidad.Empleado:
+                    VistaAbmEmpleado AbmEmp = new VistaAbmEmpleado();
+                    AbmEmp.ShowDialog();
+                    /*
+                    if (AbmEmp.SinGuardado == false)
+                    {
+                       empleados.Add(AbmEmp.GetEmp());
+                    }
+                    */
+                    UpdateList();
+                    break;
+                case Entidad.Curso:
+                    /*
+                    VistaAbmCurso AbmCur = new VistaAbmCurso(alumnos, empleados);
+                    AbmCur.ShowDialog();
+
+                    //if (AbmCur.SinGuardado == false)
+                    //{
+                    //    cursos.Add(AbmCur.GetCurso());
+                    //}
+
+                    UpdateList();
+                    */
+                    break;
+                default:
+                    break;
+            }
+        }
+        private void Modificacion()
+        {
+            switch (EntidadSeleccionada())
+            {
+                case Entidad.Alumno:
+                    VistaAbmAlumno AbmAlum = new VistaAbmAlumno(alumnos[lbxEntidades.SelectedIndex]);
+                    AbmAlum.ShowDialog();
+                    alumnos[lbxEntidades.SelectedIndex] = AbmAlum.Alumno;
+                    UpdateList();
+                    break;
+                case Entidad.Empleado:
+                    /*
+                    VistaAbmEmpleado AbmEmp = new VistaAbmEmpleado(empleados[lbxEntidades.SelectedIndex]);
+                    AbmEmp.ShowDialog();
+                    //empleados[lbxEntidades.SelectedIndex] = AbmEmp.GetEmp());
+                    UpdateList();
+                    */
+                    break;
+                case Entidad.Curso:
+                    /*
+                    VistaAbmCurso AbmCur = new VistaAbmCurso(alumnos, empleados, cursos[lbxEntidades.SelectedIndex]);
+                    AbmCur.ShowDialog();
+                    //cursos[lbxEntidades.SelectedIndex] = AbmCur.GetCurso();
+                    UpdateList();
+                    */
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

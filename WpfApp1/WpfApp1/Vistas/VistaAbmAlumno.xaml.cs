@@ -33,6 +33,11 @@ namespace WpfApp1.Vistas
         public VistaAbmAlumno(Alumno _alumno) : this()
         {
             alumno = _alumno;
+
+            txbNombre.Text = alumno.Nombre;
+            txbApellido.Text = alumno.Apellido;
+            txbDni.Text = alumno.Dni.ToString();
+            dpFechaNac.SelectedDate = alumno.FechaDeNac;
         }
 
         public bool ConGuardado { get => conGuardado;}
